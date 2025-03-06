@@ -1,0 +1,63 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.accent__color {
+  color: #51f2d3;
+  text-transform: lowercase;
+}
+
+.header {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.4)), url("../img/ca_1600px_mikroplastik-1600x746.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.header__title {
+  text-transform: uppercase;
+  position: relative;
+  font-size: 4rem;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  text-shadow: 2px 3px 5px rgba(46, 46, 46, 0.1803921569);
+}
+.header__title::before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  height: 5px;
+  width: 38%;
+  background-color: #51f2d3;
+}
+.header__btn {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: 2em 0 3em;
+  padding: 0.8em 1.6em;
+  background: rgba(81, 242, 210, 0.7176470588);
+  border: 2px solid #51f2d3;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: color 0.3s, background 0.3s;
+  cursor: pointer;
+}
+.header__btn:hover {
+  background: none;
+  color: #51f2d3;
+}/*# sourceMappingURL=style.css.map */

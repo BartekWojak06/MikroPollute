@@ -1,0 +1,72 @@
+@use './_colors' as *;
+
+
+*, *::after, *::before {
+    margin: 0; 
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.accent__color {
+    color: $sea-blue;
+    text-transform: lowercase;
+}
+
+.header {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $blue-gradient, url('../img/ca_1600px_mikroplastik-1600x746.jpg');
+    background-position: center;
+    background-size: cover;
+
+        &__title {
+            text-transform: uppercase;
+            position: relative;
+            font-size: 4rem;
+            color:$pure-white;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 2px 3px 5px #2e2e2e2e;
+            
+            &::before {
+                position: absolute;
+                bottom: 0;
+                content: '';
+                height: 5px;
+                width: 38%;
+                background-color: $sea-blue;
+            }
+
+            
+        }
+        &__btn { 
+            min-width: fit-content;
+            margin: 2em 0 3em;
+            padding: 0.8em 1.6em;
+            background: #51f2d2b7;
+            border: 2px solid $sea-blue;
+            font-weight: 600;
+            color: $pure-white;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: color 0.3s, background 0.3s;
+            cursor: pointer;
+
+                &:hover {
+                    background:none;
+                    color: $sea-blue;
+                }
+
+        }
+
+}
