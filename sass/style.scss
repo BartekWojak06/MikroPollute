@@ -10,6 +10,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
             font-weight: 500;
             font-size: 1.2rem;
             text-transform: uppercase;
+            text-decoration: none;
             transition: color 0.3s, background 0.3s, border 0.3s;
 
             cursor: pointer;
@@ -117,6 +119,60 @@ body {
 }
 
 
+// NAWIGACJA============================================
+
+.nav {
+    &__link {
+        width: 100%;
+        // max-width: 300px;
+        padding: 2em;
+        display: block;
+        margin: 4em 0;
+        text-decoration: none;
+        // text-align: center;
+        background-color: #caf0f84d;
+        border: 2px solid transparent;
+        border-radius: 8px;
+
+        transition: border 0.3s, background 0.3s;
+
+        &:hover {
+        
+            border: 2px solid $secondary-color;
+            background: none;
+        }
+
+    }
+    &__img {
+        display: block;
+        font-style: italic;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        
+    }
+    &__link-title {
+        margin: 1em 0;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 600;
+        // text-align: center;
+        transition: color 0.3s;
+
+            &:hover {
+                color: $secondary-color;
+            }
+    }
+    &__link-text {
+        color: #333;
+        font-size: 1.4rem;
+        line-height: 25px;
+        text-align: left;
+        font-weight: 350;
+        
+    }
+}
 
 
 
@@ -172,5 +228,48 @@ body {
         &__btn{
             font-size: 1.4rem;
         }     
+    }
+    .nav {
+
+        
+        &__box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__link {
+            width: 40%;
+            margin: 2em;
+            
+            
+        }
+        &__link-body {
+            padding: 1em 0;
+        }
+        
+    }
+}
+@media(992px <= width) {
+    .header {
+        &__title{
+            font-size: 7rem;
+        }
+        &__btn{
+            font-size: 1.7rem;
+        }     
+    }
+    .nav {
+
+        &__box {
+            justify-content: space-between;
+        }
+
+
+        &__link {
+            width: 30%;
+            margin: 0;
+
+
+        }
     }
 }

@@ -1,3 +1,9 @@
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .left-block {
   position: absolute;
   width: 60%;
@@ -12,6 +18,45 @@
   padding: 6em 2em;
 }
 
+.section-title {
+  text-align: center;
+  color: #0077b6;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.1rem;
+  font-weight: 400;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  margin: 0.3em auto 6em;
+  background-color: #51f2d3;
+}
+
+@media (768px <= width) {
+  .section-padding {
+    padding: 8em 2em;
+  }
+  .left-block {
+    width: 45%;
+    height: 40px;
+  }
+  .section-title {
+    font-size: 2.8rem;
+  }
+}
+@media (992px <= width) {
+  .section-padding {
+    padding: 10em 2em;
+  }
+  .section-title {
+    font-size: 3.5rem;
+  }
+  .underline {
+    margin: 0.3em auto 9em;
+  }
+}
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -20,6 +65,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -73,6 +119,7 @@ body {
   font-weight: 500;
   font-size: 1.2rem;
   text-transform: uppercase;
+  text-decoration: none;
   transition: color 0.3s, background 0.3s, border 0.3s;
   cursor: pointer;
 }
@@ -114,11 +161,81 @@ body {
   opacity: 1;
 }
 
+.nav__link {
+  width: 100%;
+  padding: 2em;
+  display: block;
+  margin: 4em 0;
+  text-decoration: none;
+  background-color: rgba(202, 240, 248, 0.3019607843);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border 0.3s, background 0.3s;
+}
+.nav__link:hover {
+  border: 2px solid #0077b6;
+  background: none;
+}
+.nav__img {
+  display: block;
+  font-style: italic;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.nav__link-title {
+  margin: 1em 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.nav__link-title:hover {
+  color: #0077b6;
+}
+.nav__link-text {
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 25px;
+  text-align: left;
+  font-weight: 350;
+}
+
 @media (576px <= width) {
   .header__title {
     font-size: 5rem;
   }
   .header__btn {
     font-size: 1.4rem;
+  }
+  .nav__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav__link {
+    width: 40%;
+    margin: 2em;
+  }
+  .nav__link-body {
+    padding: 1em 0;
+  }
+}
+@media (992px <= width) {
+  .header__title {
+    font-size: 7rem;
+  }
+  .header__btn {
+    font-size: 1.7rem;
+  }
+  .nav__box {
+    justify-content: space-between;
+  }
+  .nav__link {
+    width: 30%;
+    margin: 0;
   }
 }/*# sourceMappingURL=style.css.map */

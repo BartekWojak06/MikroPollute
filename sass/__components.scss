@@ -3,6 +3,14 @@
 
 
 
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
 .left-block {
     position: absolute;
     width: 60%;
@@ -15,4 +23,60 @@
 
 .section-padding {
     padding: 6em 2em;
+    
+}
+
+.section-title {
+    text-align: center;
+    color: $secondary-color;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+.underline {
+    width: 60px;
+    height: 3px;
+    margin: 0.3em auto 6em;
+    background-color: $sea-blue;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(768px <= width){
+    .section-padding {
+        padding: 8em 2em;
+    }
+    .left-block {
+        width: 45%;
+        height: 40px;
+    }
+    .section-title {
+        font-size: 2.8rem;
+    }
+}
+@media(992px <= width){
+    .section-padding {
+        padding: 10em 2em;
+    }
+    .section-title {
+        font-size: 3.5rem;
+    }
+    .underline {
+        margin: 0.3em auto 9em;
+
+    }
 }
