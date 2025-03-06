@@ -1,3 +1,17 @@
+.left-block {
+  position: absolute;
+  width: 60%;
+  height: 30px;
+  bottom: 0;
+  left: -50px;
+  transform: skew(45deg);
+  background-color: #fff;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -9,55 +23,102 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .accent__color {
+  position: relative;
   color: #51f2d3;
   text-transform: lowercase;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.accent__color::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
 }
 
 .header {
   height: 75vh;
+  padding: 2em;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, rgba(20, 105, 241, 0.6), rgba(42, 10, 184, 0.4)), url("../img/ca_1600px_mikroplastik-1600x746.jpg");
+  background: linear-gradient(45deg, rgba(0, 118, 182, 0.95), rgba(0, 180, 216, 0.75)), url("../img/ca_1600px_mikroplastik-1600x746.jpg");
   background-position: center;
   background-size: cover;
 }
 .header__title {
-  text-transform: uppercase;
-  position: relative;
   font-size: 4rem;
   color: #fff;
-  font-family: "Raleway", sans-serif;
   text-shadow: 2px 3px 5px rgba(46, 46, 46, 0.1803921569);
-}
-.header__title::before {
-  position: absolute;
-  bottom: 0;
-  content: "";
-  height: 5px;
-  width: 38%;
-  background-color: #51f2d3;
 }
 .header__btn {
   min-width: -moz-fit-content;
   min-width: fit-content;
-  margin: 2em 0 3em;
-  padding: 0.8em 1.6em;
-  background: rgba(81, 242, 210, 0.7176470588);
-  border: 2px solid #51f2d3;
-  font-weight: 600;
-  color: #fff;
-  border-radius: 5px;
+  position: relative;
+  margin: 3em 0 4em;
+  padding: 1em;
+  background: none;
+  border: 2px solid #caf0f8;
+  color: #caf0f8;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  transition: color 0.3s, background 0.3s;
+  transition: color 0.3s, background 0.3s, border 0.3s;
   cursor: pointer;
 }
 .header__btn:hover {
-  background: none;
-  color: #51f2d3;
+  background: #20eaab;
+  color: #0077b6;
+  border: 2px solid transparent;
+}
+.header__btn::after, .header__btn::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  transition: border 0.2s, opacity 0.1s, transform 0.2s;
+}
+.header__btn::after {
+  left: 0;
+  top: 0;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+.header__btn::before {
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+.header__btn:hover::before {
+  border-right: 2px solid #20eaab;
+  border-bottom: 2px solid #20eaab;
+  transform: translate(8px, 8px);
+  opacity: 1;
+}
+.header__btn:hover::after {
+  border-top: 2px solid #20eaab;
+  border-left: 2px solid #20eaab;
+  transform: translate(-8px, -8px);
+  opacity: 1;
+}
+
+@media (576px <= width) {
+  .header__title {
+    font-size: 5rem;
+  }
+  .header__btn {
+    font-size: 1.4rem;
+  }
 }/*# sourceMappingURL=style.css.map */

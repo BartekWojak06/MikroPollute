@@ -1,4 +1,5 @@
 @use './_colors' as *;
+@use './_components' as *;
 
 
 *, *::after, *::before {
@@ -12,17 +13,32 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .accent__color {
+    position: relative;
     color: $sea-blue;
     text-transform: lowercase;
+    font-weight: 200;
+    letter-spacing: 2px;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        height: 3px;
+        width: 100%;
+        background-color: $pure-white;
+    }
 }
 
 .header {
     height: 75vh;
+    padding: 2em;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -31,42 +47,130 @@ body {
     background-size: cover;
 
         &__title {
-            text-transform: uppercase;
-            position: relative;
             font-size: 4rem;
             color:$pure-white;
-            font-family: 'Raleway', sans-serif;
             text-shadow: 2px 3px 5px #2e2e2e2e;
             
-            &::before {
-                position: absolute;
-                bottom: 0;
-                content: '';
-                height: 5px;
-                width: 38%;
-                background-color: $sea-blue;
-            }
+          
 
             
         }
         &__btn { 
             min-width: fit-content;
-            margin: 2em 0 3em;
-            padding: 0.8em 1.6em;
-            background: #51f2d2b7;
-            border: 2px solid $sea-blue;
-            font-weight: 600;
-            color: $pure-white;
-            border-radius: 5px;
+            position: relative;
+            margin: 3em 0 4em;
+            padding: 1em;
+            background: none;
+            border: 2px solid $light-blue;
+            color: $light-blue;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            transition: color 0.3s, background 0.3s;
+            transition: color 0.3s, background 0.3s, border 0.3s;
+
             cursor: pointer;
 
                 &:hover {
-                    background:none;
-                    color: $sea-blue;
+                    background: $lime;
+                    color: $secondary-color;
+                    border: 2px solid transparent;
+
+                   
+                }
+                &::after, &::before {
+                    content: '';
+                    position: absolute;
+                    width: 50%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: border 0.2s, opacity 0.1s, transform 0.2s;
                 }
 
+                &::after {
+                    left: 0;
+                    top: 0;
+                    border-top: 2px solid transparent;
+                    border-left: 2px solid transparent;
+                }
+                &::before {
+                    right: 0;
+                    bottom: 0;
+                    border-right:  2px solid transparent;
+                    border-bottom: 2px solid transparent;
+                }
+                &:hover::before {
+                    border-right:  2px solid $lime;
+                    border-bottom:  2px solid $lime;
+                    transform: translate(8px, 8px);
+                    opacity: 1;
+
+                }
+                &:hover::after {
+                    border-top: 2px solid $lime;
+                    border-left: 2px solid $lime;
+                    transform: translate(-8px, -8px);
+                    opacity: 1;
+                }
         }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ================ media ===================
+@media(576px <= width) {
+    .header {
+        &__title{
+            font-size: 5rem;
+        }
+        &__btn{
+            font-size: 1.4rem;
+        }     
+    }
 }

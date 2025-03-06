@@ -1,0 +1,18 @@
+@use './_colors' as *;
+
+
+
+
+.left-block {
+    position: absolute;
+    width: 60%;
+    height: 30px;
+    bottom: 0;
+    left: -50px;
+    transform: skew(45deg);
+    background-color: $pure-white;
+}
+
+.section-padding {
+    padding: 6em 2em;
+}
