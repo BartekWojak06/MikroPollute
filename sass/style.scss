@@ -13,11 +13,16 @@ html {
     scroll-behavior: smooth;
 }
 
+.section {
+    scroll-margin-top: -40px;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
 }
 
 .accent__color {
+    display: inline-block;
     position: relative;
     color: $sea-blue;
     text-transform: lowercase;
@@ -36,7 +41,7 @@ body {
 }
 
 .header {
-    height: 75vh;
+    height: 85vh;
     padding: 2em;
     display: flex;
     position: relative;
@@ -46,8 +51,43 @@ body {
     background: $blue-gradient, url('../img/ca_1600px_mikroplastik-1600x746.jpg');
     background-position: center;
     background-size: cover;
+    overflow: hidden;
+    z-index: 0;
+
+
+        &__bg-icon {
+            display: none;
+            position: absolute;
+            z-index: -1;
+                &--left {
+                    top:10%;
+                    left: -100px;
+                    width: 20%;
+                    opacity: 0.22;
+                }
+                &--right {
+                    bottom: 10%;
+                    right: 30%;
+                    width: 7%;
+                    opacity: 0.15;
+                }
+                &--top {
+                    top: -70px;
+                    width: 10%;
+                    right: 5%;
+                    opacity: 0.4;
+                }
+                &--middle {
+                    top: 15%;
+                    width: 3%;
+                    right: 55%;
+                    opacity: 0.1;
+                }
+
+        }
 
         &__title {
+            text-align: center;
             font-size: 4rem;
             color:$pure-white;
             text-shadow: 2px 3px 5px #2e2e2e2e;
@@ -67,12 +107,15 @@ body {
             letter-spacing: 2px;
             font-weight: 500;
             font-size: 1.2rem;
+            text-align: center;
             text-transform: uppercase;
             text-decoration: none;
-            transition: color 0.3s, background 0.3s, border 0.3s;
-
+            transition: color 0.3s, background 0.3s, border 0.3s, transform .1s;
             cursor: pointer;
 
+            &:active {
+                transform: scale(.95);
+            }
                 &:hover {
                     background: $lime;
                     color: $secondary-color;
@@ -123,45 +166,54 @@ body {
 
 .nav {
     &__link {
+        position: relative;
         width: 100%;
-        // max-width: 300px;
-        padding: 2em;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         margin: 4em 0;
         text-decoration: none;
-        // text-align: center;
-        background-color: #caf0f84d;
-        border: 2px solid transparent;
-        border-radius: 8px;
-
-        transition: border 0.3s, background 0.3s;
+        box-shadow: 5px 5px 10px #2e2e2e18;
+        transition: background 0.3s;
+        z-index: 0;
+        transition: transform .3s;
 
         &:hover {
-        
-            border: 2px solid $secondary-color;
-            background: none;
+            transform: scale(.95);
+        }
+        &:active {
+            transform: scale(.90);
         }
 
+    }
+    &__link-icon {
+        display: none;
+    }
+    &__link-body {
+        padding: 2em;
+        width: 100%;
+        height: 100%;
     }
     &__img {
         display: block;
         font-style: italic;
         width: 100%;
+        height: 40%;
+        max-height: 250px;
         object-fit: cover;
         object-position: center;
-        
     }
     &__link-title {
         margin: 1em 0;
         font-size: 1.8rem;
         letter-spacing: 1px;
-        color: #000;
+        color: #2c2b2b;
         font-weight: 600;
-        // text-align: center;
         transition: color 0.3s;
 
             &:hover {
-                color: $secondary-color;
+                color: #27d29c;
             }
     }
     &__link-text {
@@ -169,49 +221,218 @@ body {
         font-size: 1.4rem;
         line-height: 25px;
         text-align: left;
-        font-weight: 350;
+        font-weight: 450;
         
     }
 }
 
+// HERO-SECTION==========================
+
+.hero-section {
+   position: relative;
+    background: $blue-gradient, url('../img/istockphoto-2104778839-1024x1024.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    &.section-padding {
+        padding: 10em 2em;
+    }
+
+    &__title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-align: center;
+        margin: 0 0 2em;
+        color: $pure-white;
+        line-height: 25px;
+    }
+
+}
+
+// ARTICLE=============================================
+
+
+.article__list {
+    padding: 2em 2em 1em;
+    &-item {
+        font-size: 1.4rem;
+        line-height: 24px;
+        font-weight: 500;
+        margin: 0.3em 0;
+
+    }
+}
+
+
+.article__first {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    &-img {
+        width: 100%;
+    }
+    &-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-block-start: 2em;
+
+    }
+    &-text {
+        font-size: 1.4rem;
+        margin: 2em 0 0.5em;
+        line-height: 24px;
+        font-weight: 500;
+
+    }
 
 
 
+}
+
+// QUIZ1-SECTION=====
+
+.quiz-section {
+    &__title {
+        text-align: center;
+        font-size: 4rem;
+
+    }
+    &__box {
+        padding: 5em 2em;
+        box-shadow: 5px 5px 10px #2e2e2e2e;
+        background-color: #caf0f85b;
+
+    }
+    &__answer-box {
+        margin: 3em 0 5em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+
+    }
+    &__question {
+        text-align: left;
+        color: #1bd298 ;
+        font-size: 2rem;
+        margin: 3em 0 1em;
+    }
+    &__input[type='radio'] {
+        display: none;
+
+    }
+
+    &__btn {
+        display: block;
+        position: relative;
+        margin: 2em auto 0;
+        padding: 0.8em 1.6em;
+        width: 80%;
+        max-width: 400px;
+        background: none;
+        border: 2px solid $lime;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-transform: capitalize;
+        transition: color .3s, background-color .3s, transform .3s;
+
+        &:active {
+            transform: scale(0.90);
+
+        }
+        &:hover {
+            background-color: $lime;
+            color: $pure-white;
+        }
+        
+    }
+    label {
+        min-width: fit-content;
+        position: relative;
+        display:inline-flex;
+        align-items: center;
+        color: #000 ;
+        font-size: 1.5rem;
+        text-align: left;
+        cursor: pointer;
+        border: 2px solid $lime;
+        padding: 0.5em;
+        gap: 1.5em;
+        font-weight: 500;
+        transition: transform 0.3s;
+
+        
+
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            aspect-ratio: 1;
+            border: 2px solid $lime;
+            
+
+        }
+
+        &:active {
+            transform: scale(0.90);
+
+        }
+        &:hover {
+            background-color: $lime;
+            color: $pure-white;
+
+            
+        }
+        &:hover::before {
+            border: 2px solid $pure-white;
+        }
 
 
 
+    }
+    &__input[type='radio']:checked + label::before {
+        background-color: $lime;
+    }
+   
+}
 
+.warning-modal {
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3em;
+    background-color: $light-blue;
+    box-shadow: 5px 5px 10px #2e2e2e2e;
+    z-index: 1000;
 
+      &.active {
+        padding: 5em;
+        display: block;
+      }
+}
+.warning-info {
+    font-size: 2rem;
+}
+.warning-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0.3em;
+    background: none;
+    border: none;
+    cursor: pointer;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    img {
+        width: 30px;
+    }
+}
 
 
 
@@ -243,13 +464,32 @@ body {
             
             
         }
-        &__link-body {
-            padding: 1em 0;
-        }
         
     }
 }
+
+@media(768px <= width) {
+    .article__first {
+        &-title {
+            font-size: 2.5rem;
+        }
+        &-text {
+            font-size: 1.7rem;
+        }
+        
+    }
+    .article__list-item {
+        font-size: 1.7rem;
+    }
+}
+
+
 @media(992px <= width) {
+
+    .section {
+        scroll-margin-top: -170px;
+    }
+    
     .header {
         &__title{
             font-size: 7rem;
@@ -257,6 +497,18 @@ body {
         &__btn{
             font-size: 1.7rem;
         }     
+
+         &__bg-icon {
+                display: block;
+                    &--left {
+                        top:0;
+                        left: -130px;
+                    }
+         
+    
+            }
+    
+        
     }
     .nav {
 
@@ -268,8 +520,68 @@ body {
         &__link {
             width: 30%;
             margin: 0;
-
-
+        }
+        &__link-title {
+            font-size: 2.3rem;
+        }
+        &__link-text {
+            font-size: 1.8rem;
+            line-height: 28px;
+        }
+        &__link-body {
+            height: 350px;
+        }
+        &__link-icon {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width:55%;
+            opacity: 0.1;
+            z-index: -1;
         }
     }
+    .hero-section {
+        &.section-padding {
+            padding: 13em 2em;
+        }
+
+        
+    }
+    .article__first {
+        &-title {
+            font-size: 3rem;
+        }
+        &-text {
+            font-size: 2rem;
+            line-height: 30px;
+        }
+        
+    }
+    .article__list-item {
+        font-size: 2rem;
+    }
+    .quiz-section {
+        &__title {
+            font-size: 5rem;
+        }
+        &__question {
+            font-size: 2.5rem;
+        }
+        label {
+            font-size: 1.7rem;
+        }
+       
+    }
+}
+
+
+@media(1100px <= width) {
+    .nav {
+        &__link-body {
+            padding: 3em;
+        }
+    }
+
 }

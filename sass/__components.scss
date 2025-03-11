@@ -20,10 +20,21 @@
     transform: skew(45deg);
     background-color: $pure-white;
 }
+.right-block {
+    position: absolute;
+    width: 60%;
+    height: 30px;
+    top: 0;
+    right: -50px;
+    transform: skew(45deg);
+    background-color: $pure-white;
+}
+
+
 
 .section-padding {
-    padding: 6em 2em;
-    
+    padding: 6em 2em 3em;
+
 }
 
 .section-title {
@@ -38,10 +49,43 @@
     width: 60px;
     height: 3px;
     margin: 0.3em auto 6em;
-    background-color: $sea-blue;
+    background-color: $lime;
 
 }
+.line {
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background-color: $lime;
+    margin: 4em auto;
+}
+.square {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $lime;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $pure-white;
+    
 
+    &--right {
+        right: 100px;
+    }
+    &--middle {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+   
+}
+.line-middle {
+    margin: 8em auto;
+
+}
+.text-bold {
+    font-weight: 700;
+}
 
 
 
@@ -60,7 +104,7 @@
     .section-padding {
         padding: 8em 2em;
     }
-    .left-block {
+    .left-block, .right-block {
         width: 45%;
         height: 40px;
     }
@@ -76,6 +120,24 @@
         font-size: 3.5rem;
     }
     .underline {
+        width: 70px;
+        margin: 0.3em auto 9em;
+
+    }
+    .square {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media(1100px <= width){
+    .section-padding {
+        padding: 20em 2em;
+    }
+    .section-title {
+        font-size: 4rem;
+    }
+    .underline {
+        width: 100px;
         margin: 0.3em auto 9em;
 
     }
