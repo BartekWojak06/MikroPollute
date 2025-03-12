@@ -50,6 +50,9 @@
     height: 3px;
     margin: 0.3em auto 6em;
     background-color: $lime;
+    &--blue {
+        background-color: $secondary-color;
+    }
 
 }
 .line {
@@ -58,6 +61,11 @@
     position: relative;
     background-color: $lime;
     margin: 4em auto;
+
+    &-blue {
+        background-color: $secondary-color;
+
+    }
 }
 .square {
     position: absolute;
@@ -71,12 +79,18 @@
 
     &--right {
         right: 100px;
+        &--blue {
+            border: 2px solid $secondary-color;
+        }
     }
     &--middle {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
+    &--blue {
+        border: 2px solid $secondary-color;
+    }
+ 
    
 }
 .line-middle {
